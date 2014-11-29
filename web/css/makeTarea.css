@@ -1,0 +1,492 @@
+
+/**
+ * makeTarea css
+ *
+ * @Created on 16 de Mayo del 2014
+ * @author: @DiganmeGiovanni
+ *
+ */
+
+/* --- HTML TAGS */
+
+article {
+    background: #FFF;
+    box-shadow: 0px 10px 25px #000;
+    margin: auto;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%;
+    width: 80%;
+}
+
+body {
+    background: #F8F8F8;
+    font-family: 'Open Sans';
+    font-size: 0.9em;
+}
+
+header {
+    background: white;
+    box-shadow: 0px 10px 25px #000;
+    margin: auto;
+    padding-top: 3%;
+    width: 90%;
+}
+
+nav {
+    background: #2E2E2E;
+    
+    padding: 1.5%;
+}
+
+
+/* --- CUSTOM CLASSES */
+
+.app-container {
+    margin: auto;
+    width: 30%;
+}
+
+.card-cont {
+    box-shadow: 0px 0px 5px #323232;
+    height: 620px;
+    max-height: 620px;
+    min-height: 620px;
+}
+
+.card-cont-cards {
+    height: 567px;
+    max-height: 567px;
+    min-height: 567px;
+    overflow-y: auto;
+}
+
+.card-cont-title {
+    background: #323232;
+    border: 1px solid #323232;
+    color: #E3E3E3;
+    font-size: 0.97em;
+    padding: 15px;
+}
+
+.card-title-icon {
+    color: #E3E3E3;
+    font-size: 1.3em;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.card-title-icon:hover {
+    color: #AAA;
+}
+
+.content-centered {
+    text-align: center;
+}
+
+.content-left {
+    text-align: left;
+}
+
+.content-right {
+    text-align: right;
+}
+
+.columnas {
+    display: flex;
+}
+
+.col-left10 {
+    order: 1;
+    width: 10%;
+}
+
+.col-left33 {
+    order: 1;
+    width: 33%;
+}
+
+.col-center34 {
+    order: 2;
+    width: 34%;
+}
+
+.col-right33 {
+    order: 3;
+    width: 33%;
+}
+
+.col-left50 {
+    order: 1;
+    width: 50%;
+}
+
+.col-left70 {
+    /*border: 1px solid red;*/
+    order: 1;
+    width: 70%;
+}
+
+.col-left30 {
+    order: 1;
+    width: 30%;
+}
+
+.col-right70 {
+    order: 2;
+    width: 70%;
+}
+
+.col-right30 {
+    order: 2;
+    width: 30%;
+}
+
+.col-right50 {
+    order: 2;
+    width: 50%;
+}
+
+.col-right90 {
+    order: 2;
+    width: 90%;
+}
+
+.daytasks {
+    margin: auto;
+    width: 95%;
+}
+
+.daytasks .task {
+    background: #F8F8F8;
+    box-shadow: 0px 0px 10px #323232;
+}
+
+.daytasks .task .day {
+    font-size: 2em;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    
+    text-align: center;
+}
+
+.daytasks .task .info {
+    background: #FFF;
+    border: 1px solid #F8F8F8;
+    padding: 10px;
+}
+
+.daytasks .task .info .title {
+    color: #2C3E50;
+    font-size: 1.1em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.daytasks .task .info .descripcion {
+    font-size: 1em;
+    font-style: italic;
+}
+
+.doc-editor {
+    border: 1px solid red;
+    padding: 10px;
+}
+
+.info-card {
+    background: #FFF;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    box-shadow: 2px 0px 3px #323232;
+    margin: auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    max-height: 110px;
+    overflow: hidden;
+    padding-bottom: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 5px;
+    width: 90%;
+}
+
+.info-card-content {
+    color: #222;
+    font-size: 0.8435em;
+    text-align: justify;
+}
+
+.info-card-icon {
+    color: #111;
+    font-size: 1.1em;
+    margin-left: 2px;
+    text-decoration: none;
+}
+
+.info-card-title {
+    color: #2C3E50;
+    display: inline;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.info-card-subtitle {
+    font-size: 0.9em;
+}
+
+/* FORMS */
+.fdark {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: green;
+    box-shadow: 0px 0px 15px 0px gray;
+    margin: auto;
+}
+
+.fdark legend {
+    background: #0A122A;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #F2F2F2;
+    font-size: 1em;
+    padding: 4%;
+    width: 92%;
+}
+
+.fdark-btn {
+    background: #323232;
+    border: none;
+    border-radius: 2px;
+    color: #FFF;
+    outline: none;
+    padding: 12px;
+}
+
+.fdark-btn:active {
+    background: #151515;
+}
+
+.fdark-errs {
+    color: red;
+    font-size: 0.85em;
+    margin: 3%;
+    text-align: center;
+}
+
+.fdark-submit-area {
+    background: #F8F8F8;
+    border: none;
+    text-align: right;
+}
+
+.fdark-fset {
+    color: #2980b9;
+    border: none;
+    text-align: center;
+}
+
+.fdark-inpt, .fdark-txt {
+    background: #FFF;
+    border: 1px solid #A4A4A4;
+    border-radius: 3px;
+    font-family: 'Raleway', 'Sans';
+    font-size: 0.95em;
+    margin: auto;
+    padding: 10px;
+    resize: none;
+}
+
+.fdark-inpt:focus, .fdark-txt:focus {
+    box-shadow: 0px 0px 5px #01A9DB;
+    outline: 0;
+}
+
+.fdark-inpt-big {
+    width: 90%;
+}
+
+.fdark fieldset .btn {
+    font-size: 0.9em;
+    width: auto;
+}
+
+/* END FORM STYLES */
+
+.horarios {
+    
+}
+
+.horarios .titlebar {
+    background: #323232;
+    color: #EEE;
+    padding: .1%;
+}
+
+.horarios .weekhorario {
+    width: 96%;
+    padding-left: 2%;
+    padding-right: 2%;
+    overflow-x: auto;
+}
+
+.horarios .weekhorario .weekday {
+    box-shadow: 0px 0px 10px #323232;
+    height: 500px;
+    margin-bottom: 35px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+    max-height: 500px;
+    min-height: 500px;
+    max-width: 320px;
+    min-width: 319px;
+    width: 320px;
+}
+
+.materias {
+    margin-right: 50px;
+}
+
+.materias .title {
+    background: #323232;
+    color: #EEE;
+    padding: 3%;
+    text-align: center;
+}
+
+.nav-btn {
+    background: #2E2E2E;
+    color: #FFF;
+    padding: 3%;
+    text-decoration: none;
+}
+
+.nav-btn:hover {
+    background: #424242;
+}
+
+.toolbar {
+    background: #F8F8F8;
+    padding: 3%;
+}
+
+.tools-editor {
+    box-shadow: 0px 0px 10px #323232;
+    margin-left: 25px;
+}
+
+.tools-editor .docslist {
+    border: 1px solid #323232;
+    padding: 5px;
+}
+
+.tools-editor .docslist .docitem {
+    border-bottom: 1px solid #121212;
+    text-decoration: none;
+    padding-top: none;
+    padding: 2%;
+    width: 95%;
+}
+
+.tools-editor .docslist .docitem a {
+    color: inherit;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+.tools-editor .subtools {
+    background: #2C3E50;
+    color: #FFF;
+    font-size: 1.1em;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.tools-editor .subtools .subtool {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.tools-editor .title {
+    background: #323232;
+    color: #EEE;
+    font-size: 1.3em;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+/* STATES */
+
+.st-canceled {
+    border-left: 4px solid #7F8C8D;
+    
+}
+
+.st-completed {
+    border-left: 4px solid #2ECC71;
+    
+}
+
+.st-normal {
+    border-left: 4px solid #3498DB;
+    
+}
+
+.st-urgent {
+    border-left: 4px solid #E74C3C;
+}
+
+
+/* --- IDs */
+
+#fecha-label {
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+#form-login {
+    width: 30%;
+}
+
+#form-nva-tarea {
+    background: #FFF;
+    color: red;
+    left: 300px;
+    position: fixed;
+    top: -66%;
+    width: 550px;
+}
+
+#form-nvo-curso {
+    background: #FFF;
+    color: red;
+    left: 300px;
+    position: fixed;
+    top: -66%;
+    width: 550px;
+}
+
+#form-nva-horaclase {
+    background: #FFF;
+    color: red;
+    left: 300px;
+    position: fixed;
+    top: -66%;
+    width: 550px;
+}
+
+#task-date {
+    padding: 2.5%;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    text-align: center;
+}
+
+#task-date .fdark-inpt {
+    margin-right: 10px;
+    width: 33%;
+}

@@ -1,0 +1,104 @@
+
+<!-- formulario para nueva materia -->
+<form method='POST' action={{ path('nva_hora_ajax') }} id="form-nva-horaclase" class="fdark" >
+    <legend>Agregar un curso al horario</legend>
+    <div class="fdark-errs">
+    
+    </div>
+    <fieldset class="fdark-fset">
+        <select name="materiaid" class="fdark-inpt fdark-inpt-big">
+            {% for curso in allcursos %}
+                <option value="{{ curso.id }}">{{curso.materia}}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        
+        <select name="dia" class="fdark-inpt fdark-inpt-big">
+            <option value="Lunes">Lunes</option>
+            <option value="Martes">Martes</option>
+            <option value="Miercoles">Miercoles</option>
+            <option value="Jueves">Jueves</option>
+            <option value="Viernes">Viernes</option>
+        </select>
+        
+        <br><br>
+        <label>Hora de inicio:</label><br>
+        <select id="hora" name="horainicio" class="fdark-inpt">
+            <option>06</option>
+            <option>07</option>
+            <option>08</option>
+            <option>09</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>00</option>
+            <option>01</option>
+            <option>02</option>
+            <option>03</option>
+            <option>04</option>
+            <option>05</option>
+        </select>
+        <select id="min" name="mininicio" class="fdark-inpt">
+            <option>00</option>
+            <option>10</option>
+            <option>20</option>
+            <option>30</option>
+            <option>40</option>
+            <option>50</option>
+        </select>
+        
+        <br><br>
+        <label>Hora de fin:</label><br>
+        <select id="hora" name="horafin" class="fdark-inpt">
+            <option>06</option>
+            <option>07</option>
+            <option>08</option>
+            <option>09</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>00</option>
+            <option>01</option>
+            <option>02</option>
+            <option>03</option>
+            <option>04</option>
+            <option>05</option>
+        </select>
+        <select id="min" name="minfin" class="fdark-inpt">
+            <option>00</option>
+            <option>10</option>
+            <option>20</option>
+            <option>30</option>
+            <option>40</option>
+            <option>50</option>
+        </select>
+        
+    </fieldset>
+    <fieldset class="fdark-submit-area">
+        <br>
+        <button type="button" class="fdark-btn" onclick="showAddHoraclase()">Cancelar</button>
+        <button type="submit" class="fdark-btn">Guardar</button>
+    </fieldset>
+</form>

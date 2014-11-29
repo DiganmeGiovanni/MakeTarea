@@ -1,0 +1,192 @@
+{% extends 'maketareaBundle::principal.html.twig' %}
+
+{% block body %}
+
+    {{ include('maketareaBundle:Tarea:new.html.twig') }}
+    {{ include('maketareaBundle:App:menuapp.html.twig') }}
+    <article class="columnas no-lateral-pads">
+        
+        {{ include('maketareaBundle:Curso:nuevo.html.twig') }}
+        {{ include('maketareaBundle:HorasClase:new.html.twig') }}
+        <div class="col-left30 materias card-cont app-container">
+            <div class="card-cont-title columnas">
+                <div class="col-left70 content-left">
+                    <span>Materias</span>
+                </div>
+                <div class="col-right30 content-right">
+                    <a href="javascript: void(0)" onclick="showNvoCursoForm()"><span class="card-title-icon fa fa-calendar"></span></a>
+                </div>
+            </div>
+            
+            <div class="card-cont-cards">
+                {% for curso in cursos %}
+                    <div class="info-card st-normal">
+                        <div>
+                            <span class="info-card-title">{{curso.materia}}</span>
+                        </div>
+                        <span class="info-card-subtitle">Profesor(a): {{ curso.nomProfesor }} {{ curso.apeProfesor }}</span>
+                        <p class="info-card-content">
+                            <span><b>{{ curso.emailProfesor }}</span></b><br>
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="col-right70 horarios card-cont">
+            <div class="titlebar">
+                <div class="card-cont-title columnas">
+                    <div class="col-left70 content-left">
+                        <span>HORARIOS</span>
+                    </div>
+                    <div class="col-right30 content-right">
+                        <a href="javascript: void(0)" onclick="showAddHoraclase()" ><span class="card-title-icon fa fa-calendar"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="weekhorario columnas">
+                <div class="weekday">
+                    <div class="card-cont-title columnas">
+                        <div class="col-left70 content-left">
+                            <span>Lunes</span>
+                        </div>
+                        <div class="col-right30 content-right">
+                            <a href="{{ path('horarios') }}"><span class="card-title-icon fa fa-calendar"></span></a>
+                        </div>
+                    </div>
+                    <div class="dayhorarios">
+                    {% for curso in cursos %}
+                        {% for horario in curso.horasClase %}
+                            {% if horario.dia == 'Lunes' %}
+                                <div class="info-card st-normal">
+                                    <div>
+                                        <span class="info-card-title">{{curso.materia}}</span>
+                                    </div>
+                                    <span class="info-card-subtitle">A las: {{ horario.horaInicio|date('H:i') }}</span>
+                                    <p class="info-card-content">
+                                        <span>Profesor(a): <b>{{ curso.nomProfesor }} {{ curso.apeProfesor }}</b></span><br>
+                                    </p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="weekday">
+                    <div class="card-cont-title columnas">
+                        <div class="col-left70 content-left">
+                            <span>Martes</span>
+                        </div>
+                        <div class="col-right30 content-right">
+                            <a href="{{ path('horarios') }}"><span class="card-title-icon fa fa-calendar"></span></a>
+                        </div>
+                    </div>
+                    <div class="dayhorarios">
+                    {% for curso in cursos %}
+                        {% for horario in curso.horasClase %}
+                            {% if horario.dia == 'Martes' %}
+                                <div class="info-card st-normal">
+                                    <div>
+                                        <span class="info-card-title">{{curso.materia}}</span>
+                                    </div>
+                                    <span class="info-card-subtitle">A las: {{ horario.horaInicio|date('H:i') }}</span>
+                                    <p class="info-card-content">
+                                        <span>Profesor(a): <b>{{ curso.nomProfesor }} {{ curso.apeProfesor }}</b></span><br>
+                                    </p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="weekday">
+                    <div class="card-cont-title columnas">
+                        <div class="col-left70 content-left">
+                            <span>Miercoles</span>
+                        </div>
+                        <div class="col-right30 content-right">
+                            <a href="{{ path('horarios') }}"><span class="card-title-icon fa fa-calendar"></span></a>
+                        </div>
+                    </div>
+                    <div class="dayhorarios">
+                    {% for curso in cursos %}
+                        {% for horario in curso.horasClase %}
+                            {% if horario.dia == 'Miercoles' %}
+                                <div class="info-card st-normal">
+                                    <div>
+                                        <span class="info-card-title">{{curso.materia}}</span>
+                                    </div>
+                                    <span class="info-card-subtitle">A las: {{ horario.horaInicio|date('H:i') }}</span>
+                                    <p class="info-card-content">
+                                        <span>Profesor(a): <b>{{ curso.nomProfesor }} {{ curso.apeProfesor }}</b></span><br>
+                                    </p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="weekday">
+                    <div class="card-cont-title columnas">
+                        <div class="col-left70 content-left">
+                            <span>Jueves</span>
+                        </div>
+                        <div class="col-right30 content-right">
+                            <a href="{{ path('horarios') }}"><span class="card-title-icon fa fa-calendar"></span></a>
+                        </div>
+                    </div>
+                    <div class="dayhorarios">
+                    {% for curso in cursos %}
+                        {% for horario in curso.horasClase %}
+                            {% if horario.dia == 'Jueves' %}
+                                <div class="info-card st-normal">
+                                    <div>
+                                        <span class="info-card-title">{{curso.materia}}</span>
+                                    </div>
+                                    <span class="info-card-subtitle">A las: {{ horario.horaInicio|date('H:i') }}</span>
+                                    <p class="info-card-content">
+                                        <span>Profesor(a): <b>{{ curso.nomProfesor }} {{ curso.apeProfesor }}</b></span><br>
+                                    </p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                    </div>
+                </div>
+                
+                <div class="weekday">
+                    <div class="card-cont-title columnas">
+                        <div class="col-left70 content-left">
+                            <span>Viernes</span>
+                        </div>
+                        <div class="col-right30 content-right">
+                            <a href="{{ path('horarios') }}"><span class="card-title-icon fa fa-calendar"></span></a>
+                        </div>
+                    </div>
+                    <div class="dayhorarios">
+                    {% for curso in cursos %}
+                        {% for horario in curso.horasClase %}
+                            {% if horario.dia == 'Viernes' %}
+                                <div class="info-card st-normal">
+                                    <div>
+                                        <span class="info-card-title">{{curso.materia}}</span>
+                                    </div>
+                                    <span class="info-card-subtitle">A las: {{ horario.horaInicio|date('H:i') }}</span>
+                                    <p class="info-card-content">
+                                        <span>Profesor(a): <b>{{ curso.nomProfesor }} {{ curso.apeProfesor }}</b></span><br>
+                                    </p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </article>
+    
+{% endblock %}

@@ -1,0 +1,167 @@
+
+{% extends 'maketareaBundle::principal.html.twig' %}
+
+{% block body %}
+
+    {{ include('maketareaBundle:Tarea:new.html.twig') }}
+    {{ include('maketareaBundle:App:menuapp.html.twig') }}
+    <article class="columnas no-lateral-pads">
+        
+        <div class="card-cont app-container">
+            <div class="card-cont-title columnas">
+                <div class="col-left70 content-left">
+                    <span>Tareas pendientes</span>
+                </div>
+                <div class="col-right30 content-right">
+                    <a href="#" onclick="newTask()"><span class="card-title-icon fa fa-file-text-o"></span></a>
+                    <a href="{{ path('make-calendar') }}"><span class="card-title-icon fa fa-calendar"></span></a>
+                </div>
+            </div>
+            <div class="card-cont-cards">
+                
+            {% for tarea in user.tareas %}
+            {% if "now"|date('Y-m-d') <= tarea.fechaEntrega|date('Y-m-d') and
+                  tarea.estado != 'Terminada' and tarea.estado != 'Cancelada' %}
+                {% if "now"|date('Y-m-d') > tarea.fechaEntrega|date('Y-m-d') %}
+                    <div class="info-card st-urgent">
+                        <div class="columnas">
+                            <div class="col-left70">
+                                <span class="info-card-title">{{tarea.titulo}} PRI</span>
+                            </div>
+                            <div class="col-right30 content-right">
+                                <a href="{{ path('app-tarea', {idtarea: tarea.id, iddoc: 1}) }}"><span class="info-card-icon fa fa-edit"></span></a>
+                                <a href="#"><span class="info-card-icon fa fa-check-square-o"></span></a>
+                            </div>
+                        </div>
+                        <span class="info-card-subtitle">{{ tarea.fechaEntrega|date('Y-m-d') }}</span>
+                        <p class="info-card-content">
+                            {{ tarea.descripcion }}
+                        </p>
+                    </div>
+                {% elseif "now"|date('Y-m') == tarea.fechaEntrega|date('Y-m') and
+                          tarea.fechaEntrega|date('d')-"now"|date('d') <=1 %}
+                    <div class="info-card st-urgent">
+                        <div class="columnas">
+                            <div class="col-left70">
+                                <span class="info-card-title">{{tarea.titulo}} SEG</span>
+                            </div>
+                            <div class="col-right30 content-right">
+                                <a href="{{ path('app-tarea', {idtarea: tarea.id, iddoc: 1}) }}"><span class="info-card-icon fa fa-edit"></span></a>
+                                <a href="#"><span class="info-card-icon fa fa-check-square-o"></span></a>
+                            </div>
+                        </div>
+                        <span class="info-card-subtitle">{{ tarea.fechaEntrega|date('Y-m-d') }}</span>
+                        <p class="info-card-content">
+                            {{ tarea.descripcion }}
+                        </p>
+                    </div>
+                {% endif %}
+            {% endif %}
+            {% endfor %}            
+            
+            {% for tarea in user.tareas %}
+                {% if tarea.estado != 'Terminada' and tarea.estado != 'Cancelada' %}
+                    {% if "now"|date('Y-m-d') <= tarea.fechaEntrega|date('Y-m-d') and
+                          "now"|date('Y-m') == tarea.fechaEntrega|date('Y-m') and
+                          tarea.fechaEntrega|date('d')-"now"|date('d') >1 %}
+                    <div class="info-card st-normal">
+                        <div class="columnas">
+                            <div class="col-left70">
+                                <span class="info-card-title">{{tarea.titulo}}</span>
+                            </div>
+                            <div class="col-right30 content-right">
+                                <a href="{{ path('app-tarea', {idtarea: tarea.id, iddoc: 1}) }}"><span class="info-card-icon fa fa-edit"></span></a>
+                                <a href="#"><span class="info-card-icon fa fa-check-square-o"></span></a>
+                            </div>
+                        </div>
+                        <span class="info-card-subtitle">{{ tarea.fechaEntrega|date('Y-m-d') }}</span>
+                        <p class="info-card-content">
+                            {{ tarea.descripcion }}
+                        </p>
+                    </div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            
+            {% for tarea in user.tareas %}
+                {% if "now"|date('Y-m-d') <= tarea.fechaEntrega|date('Y-m-d') and
+                      tarea.estado == 'Cancelada' %}
+                <div class="info-card st-canceled">
+                    <div class="columnas">
+                        <div class="col-left70">
+                            <span class="info-card-title">{{tarea.titulo}}</span>
+                        </div>
+                        <div class="col-right30 content-right">
+                            <a href="{{ path('app-tarea', {idtarea: tarea.id, iddoc: 1}) }}"><span class="info-card-icon fa fa-edit"></span></a>
+                            <a href="#"><span class="info-card-icon fa fa-check-square-o"></span></a>
+                        </div>
+                    </div>
+                    <span class="info-card-subtitle">{{ tarea.fechaEntrega|date('Y-m-d') }}</span>
+                    <p class="info-card-content">
+                        {{ tarea.descripcion }}
+                    </p>
+                </div>
+                {% endif %}
+            {% endfor %}
+                
+            {% for tarea in user.tareas %}
+                {% if "now"|date('Y-m-d') <= tarea.fechaEntrega|date('Y-m-d') and
+                      tarea.estado == 'Terminada' %}
+                <div class="info-card st-completed">
+                <div class="columnas">
+                        <div class="col-left70">
+                            <span class="info-card-title">{{tarea.titulo}}</span>
+                        </div>
+                        <div class="col-right30 content-right">
+                            <a href="{{ path('app-tarea', {idtarea: tarea.id, iddoc: 1}) }}"><span class="info-card-icon fa fa-edit"></span></a>
+                            <a href="#"><span class="info-card-icon fa fa-check-square-o"></span></a>
+                        </div>
+                    </div>
+                    <span class="info-card-subtitle">{{ tarea.fechaEntrega|date('Y-m-d') }}</span>
+                    <p class="info-card-content">
+                        {{ tarea.descripcion }}
+                    </p>
+                </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+        
+        <div class="card-cont app-container">
+            <div class="card-cont-title columnas">
+                <div class="col-left70 content-left">
+                    <span>Clases de manana</span>
+                </div>
+                <div class="col-right30 content-right">
+                    <a href="{{ path('horarios') }}"><span class="card-title-icon fa fa-calendar"></span></a>
+                </div>
+            </div>
+            <div class="card-cont-cards">
+                {% for clase in proxClases %}
+                    <div class="info-card st-normal">
+                        <div>
+                            <span class="info-card-title">{{ clase.materia }}</span>
+                        </div>
+                        <span class="info-card-subtitle">{{ clase.hora }}</span>
+                        <p class="info-card-content">
+                            <span>PROFESOR: </span><b>{{ clase.profesor }}</b><br>
+                            <span>TAREAS PENDIENTES: </span>  <b>{{ clase.tarcount }}</b>
+                        </p>
+                    </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+        
+        <div class="card-cont app-container">
+            <div class="card-cont-title">
+                <span>Ultimas alertas</span>
+            </div>
+            <div class="card-cont-cards">
+                {% for curso in cursos %}
+                    <span>{{ curso.materia }}</span><br>
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+{% endblock %}

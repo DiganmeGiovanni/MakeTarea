@@ -1,0 +1,9 @@
+
+<!-- Formulario para nuevo documento, solo solicita el nombre del doc -->
+<form method="POST" action="{{ path('nvo_doc_ajax') }}" id="form-nvo-doc" class="fdark">
+    <fieldset class="fdark-fset">
+        <input class="fdark-inpt" name="titulo" placeholder="Nuevo documento" style="width: 70%">
+        <input name="idtarea" type="hidden" value="{{ tarea.id }}">
+        <button type="submit" class="fdark-btn" >Agregar</button>
+    </fieldset>
+</form>

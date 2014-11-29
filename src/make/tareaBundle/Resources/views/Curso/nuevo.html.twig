@@ -1,0 +1,19 @@
+
+<!-- formulario para nueva materia -->
+<form method='POST' action={{ path('nvo_curso_ajax') }} id="form-nvo-curso" class="fdark" >
+    <legend>Nuevo Curso</legend>
+    <div class="fdark-errs">
+    
+    </div>
+    <fieldset class="fdark-fset">
+        <input name="materia" class="fdark-inpt fdark-inpt-big" placeholder="Nombre del curso"><br><br>
+        <input name="nomprofesor" class="fdark-inpt fdark-inpt-big" placeholder="Nombre del profesor" ><br><br>
+        <input name="apeprofesor" class="fdark-inpt fdark-inpt-big" placeholder="Apellido del profesor" ><br><br>
+        <input name="email" class="fdark-inpt fdark-inpt-big" type="email" placeholder="email@example.com" ><br><br>
+    </fieldset>
+    <fieldset class="fdark-submit-area">
+        <br>
+        <button type="button" class="fdark-btn" onclick="showNvoCursoForm()">Cancelar</button>
+        <button type="submit" class="fdark-btn">Guardar</button>
+    </fieldset>
+</form>

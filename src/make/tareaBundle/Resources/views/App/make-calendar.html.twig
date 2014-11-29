@@ -1,0 +1,189 @@
+
+{% extends 'maketareaBundle::principal.html.twig' %}
+
+{% block body %}
+
+    {{ include('maketareaBundle:Tarea:new.html.twig') }}
+    {{ include('maketareaBundle:App:menuapp.html.twig') }}
+    <article class="no-lateral-pads">
+        <div class="toolbar" style="text-align: center">
+            <a href="{{ path('make-calendar-day', {day: day, month: month, year: year}) }}">Dia</a>
+            <button>Mes</button>
+            <button>Semana</button>
+        </div>
+        <div class="week columnas">
+            <div class="day">
+                <div class="dayinfo columnas">
+                    <div class="dayname col-left70">
+                        Lunes
+                    </div>
+                    <div class="daydate col-right30">
+                        28
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="entry urgent">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry urgent">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry normal">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry completed">
+                        <br><br><br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="day">
+                <div class="dayinfo columnas">
+                    <div class="dayname col-left70">
+                        Martes
+                    </div>
+                    <div class="daydate col-right30">
+                        29
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="entry urgent">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry normal">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry normal">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry canceled">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry completed">
+                        <br><br><br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="day">
+                <div class="dayinfo columnas">
+                    <div class="dayname col-left70">
+                        Miercoles
+                    </div>
+                    <div class="daydate col-right30">
+                        30
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="entry urgent">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry urgent">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry urgent">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry normal">
+                        <br><br><br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="day">
+                <div class="dayinfo columnas">
+                    <div class="dayname col-left70">
+                        Jueves
+                    </div>
+                    <div class="daydate col-right30">
+                        01
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="entry urgent">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry normal">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry canceled">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry completed">
+                        <br><br><br><br>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="day">
+                <div class="dayinfo columnas">
+                    <div class="dayname col-left70">
+                        Viernes
+                    </div>
+                    <div class="daydate col-right30">
+                        02
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="entry normal">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry normal">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry normal">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry canceled">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry canceled">
+                        <br><br><br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="day">
+                <div class="dayinfo columnas">
+                    <div class="dayname col-left70">
+                        Sabado
+                    </div>
+                    <div class="daydate col-right30">
+                        03
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="entry">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry">
+                        <br><br><br><br>
+                    </div>
+                    <br><br><br><br><br><br>
+                </div>
+            </div>
+            <div class="day">
+                <div class="dayinfo columnas">
+                    <div class="dayname col-left70">
+                        Domingo
+                    </div>
+                    <div class="daydate col-right30">
+                        04
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="entry">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry">
+                        <br><br><br><br>
+                    </div>
+                    <div class="entry">
+                        <br><br><br><br>
+                    </div>
+                    <br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>        
+    </article>
+    
+{% endblock %}

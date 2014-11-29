@@ -1,0 +1,33 @@
+
+{% extends 'maketareaBundle::principal.html.twig' %}
+
+{% block body %}
+
+    {{ include('maketareaBundle:Tarea:new.html.twig') }}
+    {{ include('maketareaBundle:App:menuapp.html.twig') }}
+    <article class="no-lateral-pads">
+        <div class="toolbar" style="text-align: center">
+            <button>Dia</button>
+            <button>Mes</button>
+            <button>Semana</button>
+            {{ day }} {{ month }} {{ year }}
+        </div>
+    
+        <div class="daytasks">
+            {% for tarea in tareashoy %}
+                <br><br>
+                <div class="task columnas">
+                    <div class="day col-left10">
+                        <span class="day">{{ tarea.fechaentrega|date('d') }}</span>
+                    </div>
+                    <div class="info col-right90">
+                        <span class="title">{{ tarea.titulo }}</span><br>
+                        <p class="descripcion">{{ tarea.descripcion }}</p>
+                    </div>
+                </div>
+            {% endfor %}     
+        </div>
+         
+    </article>
+    
+{% endblock %}

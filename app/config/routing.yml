@@ -1,0 +1,4 @@
+maketarea:
+    resource: "@maketareaBundle/Resources/config/routing.yml"
+    prefix:   /
+

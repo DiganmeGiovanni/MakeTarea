@@ -1,0 +1,29 @@
+{% extends 'maketareaBundle::principal.html.twig' %}
+
+{% block body %}
+
+    {{ include('maketareaBundle:Default:menuIndex.html.twig') }}
+    <article>
+        <form action="{{ path('login_check') }}" method="POST" id='form-login' class="fdark">
+            <legend>Login</legend>
+            <div class="fdark-errs">
+                {% if error %}
+                <span>{{ error.message }}</span>
+                {% endif %}
+            </div>
+            <fieldset class="fdark-fset">
+                <input class="fdark-inpt fdark-inpt-big" name='_username' id='username' placeholder='email' value="">
+                <br><br>
+                <input class="fdark-inpt fdark-inpt-big" type='password' name='_password' id='password' placeholder='password'>
+                <br><br>
+            </fieldset>
+            <fieldset class='fdark-submit-area'>
+                <br>
+                <input class='fdark-btn' type='submit' value="Iniciar Sesion">
+                <input type="hidden" name="_target_path" value="/app">
+                <br>
+            </fieldset>
+        </form>
+    </article>
+    
+{% endblock %}

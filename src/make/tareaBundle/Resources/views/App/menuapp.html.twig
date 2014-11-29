@@ -1,0 +1,12 @@
+<header>
+    <nav class="columnas">
+        <div class="col-left50">
+            <a class="nav-btn" href="{{ path('app') }}">makeTarea</a>
+            <a class="nav-btn" href="{{ path('make-calendar') }}">makeCalendar</a>
+            <a class="nav-btn" href="javascript: void(0)" onclick="newTask()">Nueva Tarea</a>
+        </div>
+        <div class="col-right50 content-right">
+            <a class="nav-btn menu-right" href="{{ path('logout') }}">{{ user.nombre }} {{ user.apellidop }}</a>
+        </div>
+    </nav>
+</header>

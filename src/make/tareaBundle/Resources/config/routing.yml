@@ -1,0 +1,74 @@
+maketarea_homepage:
+    pattern:  /
+    defaults: { _controller: maketareaBundle:Default:index }
+
+app:
+    pattern: /app
+    defaults: { _controller: maketareaBundle:App:app }
+
+# calentas routes
+
+make-calendar:
+    pattern: /app/cal
+    defaults: { _controller: maketareaBundle:Calendar:calendar }
+    
+make-calendar-day:
+    pattern: /app/calday/{day}/{month}/{year}
+    defaults: { _controller: maketareaBundle:Calendar:calendarday }
+
+# tareas routes
+
+app-tarea:
+    pattern: /app/tarea/{idtarea}/{iddoc}
+    defaults: { _controller: maketareaBundle:Tarea:edittask }
+
+nva_tarea_ajax:
+    pattern: /app/ajaxnvatarea
+    defaults: { _controller: maketareaBundle:Tarea:nueva }
+    
+# Cursos routing
+
+nvo_curso_ajax:
+    pattern: /app/nvocurso
+    defaults: { _controller: maketareaBundle:Curso:nuevo }
+    
+# Horas clase routing
+
+nva_hora_ajax:
+    pattern: /app/nvahora
+    defaults: { _controller: maketareaBundle:HorasClase:nueva }
+
+    
+# Documento routes
+
+nvo_doc_ajax:
+    pattern: /app/nvodoc
+    defaults: { _controller: maketareaBundle:Documento:nuevo }
+
+# Horarios routes
+
+horarios:
+    pattern: /app/horario
+    defaults: { _controller: maketareaBundle:Horario:horarios }
+
+# Security Routes
+
+login:
+    pattern: /login
+    defaults: { _controller: maketareaBundle:Security:login }
+
+login_check:
+    path: /login_check
+    
+logout:
+    path: /logout
+    
+# End Security Routes
+
+usuario:
+    pattern: /usuario
+    defaults: { _controller: maketareaBundle:Usuario:index }
+
+curso:
+    pattern: /curso
+    defaults: { _controller: maketareaBundle:Curso:index }

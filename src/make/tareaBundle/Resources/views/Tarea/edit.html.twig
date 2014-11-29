@@ -1,0 +1,31 @@
+{% extends 'maketareaBundle::principal.html.twig' %}
+
+{% block body %}
+
+    {{ include('maketareaBundle:Tarea:new.html.twig') }}
+    {{ include('maketareaBundle:App:menuapp.html.twig') }}
+    <article class="columnas no-lateral-pads">
+        <div class="col-left70 doc-editor">
+            <h1>{{ documento.titulo }}</h1>
+            <span>editor</span>
+        </div>
+        <div class="col-right30 tools-editor">
+            <div class="title">
+                " {{ tarea.titulo }} "
+            </div>
+            <div class="subtools columnas">
+                <div class="subtool col-left33">ENLACES</div>
+                <div class="subtool col-center34">DOCUMENTOS</div>
+                <div class="subtool col-right33">DETALLES</div>
+            </div>
+            {{ include('maketareaBundle:Documento:new.html.twig') }}
+            <br><br><br>
+            <div class="docslist">
+                {% for doc in tarea.documentos %}
+                    <div class="docitem"><a href="{{ path('app-tarea', {idtarea: tarea.id, iddoc: doc.id}) }}">{{ doc.titulo }}</a></div>
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    
+{% endblock %}
